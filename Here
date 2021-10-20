@@ -1,0 +1,26 @@
+Final_Sheet <- read.excel("~/Desktop/BIOL2024 spreadsheets/Final Sheet.xls")
+
+#first accessing ggplot
+library(ggplot2)
+
+#Define a variable called e (records the two variables)
+e <- ggplot(Final_Sheet, aes(JulianDay, AvgMaxTemp4days))
+
+#making a plot using e
+e + geom_point(color = Final_Sheet$Year)
+
+
+#make year a factor
+Final_Sheet$Year <- as.factor(Final_Sheet$Year)
+
+
+
+#Making a Boxplot with Years on X, AvgMaxTemp4days on Y
+
+#Define a variable called f (records the two variables)
+
+f <-ggplot(Final_Sheet, aes(Year, AvgMaxTemp4days))
+
+#making a plot using f
+
+f + geom_boxplot()
